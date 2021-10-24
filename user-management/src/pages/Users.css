@@ -1,0 +1,13 @@
+.users{
+    position: absolute;
+    border: 1px solid black;
+    box-shadow: 0px 2px 4px rgba(128, 128, 128, 0.925);
+    width: 40vw;
+    height: 90vh;
+    align-items: flex-end;
+}
+.userItems{
+    align-items: center;
+    margin-left: 2vw;
+    margin-top: 2vh;
+}
