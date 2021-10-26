@@ -8,7 +8,7 @@ import './Users.css'
 
 //     state={
 //         numberOfUsers:2,
-//         user1Info:{
+//         userInfo:{
 //             name:'Eman',
 //             age: 24,
 //         },
@@ -21,7 +21,7 @@ import './Users.css'
 //     changeUserInfo(data){
 //         this.setState({
 //             ...this.state,
-//             user1Info: data
+//             userInfo: data
 //         })
 //     }
 //     componentDidMount(){
@@ -43,7 +43,7 @@ import './Users.css'
 //             <div className='users'>
 //                 <div className='userItems'>
 //                 <UserImage />
-//                 <UserData userInfo={this.state.user1Info} changeUserInfo={this.changeUserInfo.bind(this)}/>
+//                 <UserData userInfo={this.state.userInfo} changeUserInfo={this.changeUserInfo.bind(this)}/>
 //                 </div>
 
 //             </div>
@@ -55,63 +55,80 @@ import './Users.css'
 //functional based component 
 
 function Users() {
-    const [numberOfUsers, setNumberOfUsers] = useState(2);
-    const [user1Info, setUser1Info] = 
-    useState({
-        name: 'Eman',
-        age: 24
-    });
-    const [user2Info, setUser2Info] = useState({
-        name: 'Sara',
-        age: 21,
-    });
+    const [numberOfUsers, setNumberOfUsers] = useState(3);
+    const [userInfo, setuserInfo] =
+        useState([{
+            name: 'Eman',
+            age: 24
+        },
+        {
+            name: 'Sara',
+            age: 15,
+        },
+        {
+            name: 'Mona',
+            age: 30,
+        }]);
 
     const changeUserInfo = (data) => {
-        setUser1Info(data)
+        setuserInfo(data)
     }
-    
-    //componentDidMount
-    useEffect(()=>{
-        alert('Welcome to XXXX website')
-    },[]);
 
-    //componentDidUpdate
-    useEffect(()=>{
-      if(user1Info.name == 'Eman'){
-          return
-      }
-      else{
-        alert('your info update successfully')
-      }
-       
-    });
-     
-    // componentWillUnmount
-    useEffect(()=>{
-        return(
-            alert('Unmount')
-        )
-        
-    }, []);
+    // //componentDidMount
+    // useEffect(()=>{
+    //     alert('Welcome to XXXX website')
+    // },[]);
+
+    // //componentDidUpdate
+    // useEffect(()=>{
+    //   if(userInfo.name == 'Eman'){
+    //       return
+    //   }
+    //   else{
+    //     alert('your info update successfully')
+    //   }
+
+    // });
+
+    // // componentWillUnmount
+    // useEffect(()=>{
+    //     return(
+    //         alert('Unmount')
+    //     )
+
+    // }, []);
 
     return (
         <Fragment>
-             
+
             <div className='users'>
+                
                 <div className='userItems'>
-                <h1>
-                {numberOfUsers}
-                 active users
-            </h1> 
-            <br/>
-            <button type="button" class="btn btn-info"
-            onClick={()=>{
-                setNumberOfUsers(numberOfUsers+1)
-            }}>increment number of users</button>
-           <br/>
-           <br/>
-                    <UserImage />
-                    <UserData userInfo={user1Info} changeUserInfo={changeUserInfo} />
+                    <h1>
+                        {numberOfUsers} 
+                        active users
+                    </h1>
+                    <br />
+                    <button type="button" class="btn btn-info"
+                        onClick={() => {
+                            setNumberOfUsers(numberOfUsers + 1)
+                        }}>increment number of users</button>
+                    <br />
+                    <br />
+                    {
+                        userInfo.length > 0 ?
+                            userInfo.map((user) => {
+                                return (
+                                    <Fragment>
+                                        <UserImage />
+                                        <UserData userInfo={user} changeUserInfo={changeUserInfo} />
+                                    </Fragment>
+                                )
+
+                            })
+                            : <p>No active user</p>
+
+           }
                 </div>
             </div>
         </Fragment>
