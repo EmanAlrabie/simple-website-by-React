@@ -4,4 +4,4 @@ This repo involves projects from ReactJS course offered by the Ministry of Commu
 Pre-requisites
 --------------
 - Node.js Version: 14.17.5
-- 
+
