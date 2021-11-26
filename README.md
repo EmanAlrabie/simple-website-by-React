@@ -3,7 +3,7 @@ This repo involves projects from ReactJS course offered by the Ministry of Commu
 
 Project Link:
 --------------
-https://emanalrabie.github.io/
+https://EmanAlrabie.github.io/simple-website-by-React
 
 Pre-requisites
 --------------
