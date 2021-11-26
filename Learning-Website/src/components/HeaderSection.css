@@ -1,0 +1,43 @@
+.header-img{
+    position: absolute;
+    width: 40vw;
+    height: 70vh;
+    margin-left: 35vw;
+}
+.header-title{
+    position:relative;
+    margin-right: 50vw;
+    top:10vh;
+    width: inherit;
+    font-size: 2rem;   
+}
+.header-content{
+    margin-top:5vh;
+    font-size: 1rem;
+    
+}
+.header-button{
+    margin-top: 15vh ;
+    width: 12vw;
+    
+}
+  
+@media screen and (max-width: 600px)  {
+    .header-title{
+        position:relative;
+        top:50vh;
+        font-size: 2rem;   
+    }
+    .header-button{
+        margin-top: 5vh ;
+        width: 30vw;
+        
+    }
+    .header-img{
+        position: absolute;
+        right: 15vw; 
+        top: 0vh;
+        width: 70vw;
+        height: 50vh;
+    }
+  }

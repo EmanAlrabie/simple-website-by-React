@@ -1,8 +1,9 @@
 .App {
   align-items: center;
-  margin-top: 5vh;
-  margin-left: 5vw;
-  
+  text-align: center;
+  background-color: black;
+  color: white;
+  height: 100vh;
 }
 
 .App-logo {
